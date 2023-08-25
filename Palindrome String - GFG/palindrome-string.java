@@ -25,6 +25,10 @@ class GFG {
 class Solution {
     int isPalindrome(String S) {
         // code here
+        
+        // Here is the two-pointer approach and it is preferred for its efficiency and 
+        // memory-friendly nature when checking for palindromes in a string.
+
         int i = 0, j = S.length() - 1;
         int ans = 1;
         while (i < j) {
@@ -36,5 +40,16 @@ class Solution {
             j--;
         }
         return ans;
+        
+        
+        
+        // we can do in this method too
+        // here  using the StringBuilder approach
+        
+        // String b = S;
+        // StringBuilder reversed = new StringBuilder(S);
+        // reversed.reverse();
+        // return reversed.toString().equals(b) ? 1 : 0;
+        
     }
 };
