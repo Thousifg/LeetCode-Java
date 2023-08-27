@@ -31,18 +31,26 @@ class Reverse
     // str: input string
     public static String reverseWord(String str)
     {
-        // Reverse the string str
-        int i = 0, j = str.length() - 1;
+        // Convert the input string to a character array for easier manipulation
         char[] charArray = str.toCharArray();
         
-        while (i <= j) {
-            char temp = charArray[i];
-            charArray[i] = charArray[j];
-            charArray[j] = temp;
-            i++;
-            j--;
+        // Initialize two pointers, one at the beginning and one at the end of the charArray
+        int left = 0;
+        int right = charArray.length - 1;
+        
+        // Swap characters from both ends towards the center
+        while (left < right) {
+            // Swap characters at left and right pointers
+            char temp = charArray[left];
+            charArray[left] = charArray[right];
+            charArray[right] = temp;
+            
+            // Move the pointers towards the center
+            left++;
+            right--;
         }
         
+        // Convert the reversed character array back to a string and return
         return new String(charArray);
     }
 }
